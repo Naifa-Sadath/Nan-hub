@@ -47,59 +47,69 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
 
-    // Cart
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  /* ===============================
+     ISOTOPE FILTER (COLLECTION)
+  =============================== */
+  var $grid = $('.collection-list').isotope({
+    itemSelector: '.col-6',
+    layoutMode: 'fitRows'
+  });
 
-    function updateCartCount() {
-        $('.fa-shopping-cart').next('.badge').text(cart.length);
-    }
+  $('.filter-button-group').on('click', 'button', function () {
+    var filterValue = $(this).attr('data-filter');
+    $('.filter-button-group button').removeClass('active-filter-btn');
+    $(this).addClass('active-filter-btn');
+    $grid.isotope({ filter: filterValue });
+  });
+
+  /* ===============================
+     CART SYSTEM
+  =============================== */
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function updateCartCount() {
+    let count = cart.length;
+    $('.fa-shopping-cart').siblings('.badge').text(count);
+  }
+
+  updateCartCount();
+
+  $('.add-to-cart').on('click', function () {
+    let name = $(this).data('name');
+    let price = $(this).data('price');
+
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     updateCartCount();
+    alert(name + " added to cart");
+  });
 
-    // Add to Cart
-    $('.add-to-cart').on('click', function () {
-        let name = $(this).data('name');
-        let price = parseFloat($(this).data('price')); // ensure numeric
+  /* ===============================
+     WHATSAPP ORDER (SINGLE PRODUCT)
+  =============================== */
+  $('.order-item').on('click', function () {
+    let name = $(this).data('name');
+    let price = $(this).data('price');
 
-        cart.push({ name, price });
-        localStorage.setItem("cart", JSON.stringify(cart));
+    let phone = "+97431139653"; // Qatar number (NO + sign)
+    let message =
+      `Hello Nan Hub,%0A%0AI want to order:%0A` +
+      `Product: ${name}%0A` +
+      `Price: Rs ${price}`;
 
-        updateCartCount();
-        alert(name + " added to cart");
-    });
-
-    // WhatsApp Order
-    $('#whatsappOrder').on('click', function () {
-
-        if (cart.length === 0) {
-            alert("Your cart is empty");
-            return;
-        }
-
-        let message = "Hello Nan Hub,%0A%0AI want to order:%0A";
-        let total = 0;
-
-        cart.forEach((item, index) => {
-            message += `${index + 1}. ${item.name} - Rs ${item.price}%0A`;
-            total += item.price;
-        });
-
-        message += `%0A*Total: Rs ${total}*`;
-
-        let phoneNumber = "+97431139653"; // your WhatsApp number without +
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    });
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  });
 
 });
-// Order button for single item
-$('.order-item').on('click', function () {
-    let name = $(this).data('name');
-    let price = parseFloat($(this).data('price'));
 
-    let message = `Hello Nan Hub,%0A%0AI want to order:%0A1. ${name} - Rs ${price}%0A%0A*Total: Rs ${price}*`;
+  $('#searchInput').on('keyup', function (e) {
+    if (e.key === "Enter") {
+      let q = $(this).val().toLowerCase();
 
-    let phoneNumber = "+97431139653"; // your WhatsApp number
-    let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-    window.open(whatsappURL, '_blank');
+      if (q.includes("skirt")) location.href = "#collection";
+      else if (q.includes("jeans")) location.href = "#collection";
+      else if (q.includes("crochet")) location.href = "crochet.html";
+      else alert("No product found");
+    }
 });

@@ -4,7 +4,7 @@
     :root{
     --lg-font: 'Kaisei Tokumin', serif;
     --sm-font: 'Poppins', sans-serif;
-    --primary-color: #800000; /* Maroon */
+    --primary-color:orange; /* Maroon */
     --secondary-color:white; /* Beige */
     --text-dark: #333333; /* For readability */
     --text-light: #ffffff;
@@ -126,13 +126,14 @@ h1, h2, h3, h4, h5, h6{
   background-repeat: repeat;
 }
 @media (max-width: 768px) {
+    #header {
+        height: 70vh; /* reduce height */
+    }
+
     .carousel-item {
-        background-size: contain;
-        background-repeat: repeat;
-        background-color: #f5f0ea; /* beige background */
+        background-position: center top;
     }
 }
-
 /* Dark overlay to make text readable */
 .header-overlay {
   height: 100%;

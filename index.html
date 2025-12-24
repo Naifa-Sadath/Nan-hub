@@ -8,9 +8,10 @@
     <title>NAN HUB | Women's Clothing Store</title>
 
     <!-- Font Awesome 6 (ONLY ONE) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <!-- Font Awesome 6 -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
@@ -29,7 +30,10 @@
 <div class="order-lg-2 nav-btns">
     <div class="dropdown">
         <button class="btn" type="button" data-bs-toggle="dropdown">
-            <i class="fa fa-search"></i>
+            
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+
         </button>
 
         <ul class="dropdown-menu p-3" style="min-width:250px;">
@@ -41,6 +45,7 @@
             <li><a class="dropdown-item search-option" data-target="croptop.html">Croptop</a></li>
         </ul>
     </div>
+    
 
     <button type="button" class="btn position-relative">
         <i class="fa fa-shopping-cart"></i>
@@ -51,10 +56,7 @@
         <i class="fa fa-heart"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
     </button>
-<!-- WhatsApp order button -->
-<button id="whatsappOrder" class="btn position-relative">
-    <i class="fab fa-whatsapp"></i>
-</button>
+
     
 </div>
             
@@ -124,237 +126,151 @@
     <!-- end of header -->
 
     <!-- collection -->
-     <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">pleated skirt</p>
-                            <span class = "fw-bold">Rs 300</span>
-                          
-                          </div><section id = "collection" class = "py-5">
-        <div class = "container">
-            <div class = "title text-center">
-                <h2 class = "position-relative d-inline-block">New Collection</h2>
-            </div>
+     <section id="collection" class="py-5">
+  <div class="container">
 
-            <div class = "row g-0">
-                <div class = "d-flex flex-wrap justify-content-center mt-5 filter-button-group">
-                    <button type = "button" class = "btn m-2 text-dark active-filter-btn" data-filter = "*">All</button>
-                    <button type = "button" class = "btn m-2 text-light" data-filter = ".best">Best Sellers</button>
-                    <button type = "button" class = "btn m-2 text-light" data-filter = ".feat">Featured</button>
-                    <button type = "button" class = "btn m-2 text-light" data-filter = ".new">New Arrival</button>
-                </div>
+    <div class="title text-center">
+      <h2 class="position-relative d-inline-block">New Collection</h2>
+    </div>
 
-                <div class = "collection-list mt-4 row gx-0 gy-3">
-                    <div class = "col-6 col-lg-3 p-2  best">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/skirt.png" class = "w-100">
-                            
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                               
+    <!-- FILTER BUTTONS -->
+    <div class="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+      <button class="btn m-2 text-dark active-filter-btn" data-filter="*">All</button>
+      <button class="btn m-2 text-light" data-filter=".best">Best Sellers</button>
+      <button class="btn m-2 text-light" data-filter=".feat">Featured</button>
+      <button class="btn m-2 text-light" data-filter=".new">New Arrival</button>
+    </div>
 
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Pleated Skirt"
-  data-price="300">
-  Add to Cart
-</button>  
-<button 
-  class="btn btn-sm btn-success mt-2 order-item"
-  data-name="Pleated Skirt"
-  data-price="300">
-   Order
-</button>
-                        
-                    </div>
+    <!-- PRODUCTS -->
+    <div class="collection-list row mt-4 gx-0 gy-3">
 
-                    <div class = "col-6 col-lg-3  p-2 feat">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/jeans.png" class = "w-100">
-                        
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">BLUE jeans</p>
-                            <span class = "fw-bold">Rs 1200</span>
-                        </div>
-                        
-
- <button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="BLUE jeans"
-  data-price="1200">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3 p-2 new">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/jackets.png" class = "w-100">
-        
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">Denim jackets</p>
-                            <span class = "fw-bold">Rs 1500</span>
-                        </div>
-                        
-
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Denim jackets"
-  data-price="1500">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3  p-2 best">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/pink pants.png" class = "w-100">
-                        </div>
-                            <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">pink pantS</p>
-                            <span class = "fw-bold">Rs 500</span>
-                        </div>
-                    
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="pink pantS"
-  data-price="500">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3  p-2 feat">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/crochet.png" class = "w-100">
-                            
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">crochet</p>
-                            <span class = "fw-bold">Rs 900</span>
-                        </div>
-                        
-
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Crochet"
-  data-price="900">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3  p-2 new">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/tunics.png" class = "w-100">
-                        
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">Tunics</p>
-                            <span class = "fw-bold">Rs 700</span>
-                        </div>
-                        
-
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Tunics"
-  data-price="700">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3  p-2 best">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/c_undershirt.png" class = "w-100">
-                
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">croptop</p>
-                            <span class = "fw-bold">Rs 700</span>
-                        </div>
-                        
-
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Croptop"
-  data-price="700">
-  Add to Cart
-</button>
-                    </div>
-
-                    <div class = "col-6 col-lg-3  p-2 feat">
-                        <div class = "collection-img position-relative">
-                            <img src = "images/c_western-shirt.png" class = "w-100">
-                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
-                        </div>
-                        <div class = "text-center">
-                            <div class = "rating mt-3">
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                                <span class = "text-primary"><i class = "fas fa-star"></i></span>
-                            </div>
-                            <p class = "text-capitalize my-1">Western shirt</p>
-                            <span class = "fw-bold">Rs 800</span>
-                        </div>
-                        
-
-<button 
-  class="btn btn-sm btn-dark mt-2 add-to-cart"
-  data-name="Western Shirt"
-  data-price="800">
-  Add to Cart
-</button>
-                    </div>
-                </div>
-            </div>
+      <!-- Pleated Skirt -->
+      <div class="col-6 col-lg-3 p-2 collection-item best">
+        <div class="collection-img">
+          <img src="images/skirt.png" class="w-100">
         </div>
-    </section>
+        <div class="text-center">
+          <p class="my-1">Pleated Skirt</p>
+          <span class="fw-bold">Rs 300</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Pleated Skirt" data-price="300">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Pleated Skirt" data-price="300">Order</button>
+        </div>
+      </div>
+
+      <!-- Blue Jeans -->
+      <div class="col-6 col-lg-3 p-2 collection-item feat">
+        <div class="collection-img">
+          <img src="images/jeans.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Blue Jeans</p>
+          <span class="fw-bold">Rs 1200</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Blue Jeans" data-price="1200">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Blue jeans" data-price="1200">Order</button>
+        </div>
+      </div>
+
+      <!-- Denim Jacket -->
+      <div class="col-6 col-lg-3 p-2 collection-item new">
+        <div class="collection-img">
+          <img src="images/jackets.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Denim Jacket</p>
+          <span class="fw-bold">Rs 1500</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Denim Jacket" data-price="1500">Add to Cart</button>
+             <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Denim jacket" data-price="1500">Order</button>
+        </div>
+      </div>
+
+      <!-- Pink Pants -->
+      <div class="col-6 col-lg-3 p-2 collection-item best">
+        <div class="collection-img">
+          <img src="images/pink pants.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Pink Pants</p>
+          <span class="fw-bold">Rs 500</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Pink Pants" data-price="500">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="pink pants" data-price="500">Order</button>
+        </div>
+      </div>
+
+      <!-- Crochet -->
+      <div class="col-6 col-lg-3 p-2 collection-item feat">
+        <div class="collection-img">
+          <img src="images/crochet.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Crochet</p>
+          <span class="fw-bold">Rs 900</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Crochet" data-price="900">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Crochet" data-price="900">Order</button>
+        </div>
+      </div>
+
+      <!-- Tunics -->
+      <div class="col-6 col-lg-3 p-2 collection-item new">
+        <div class="collection-img">
+          <img src="images/tunics.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Tunics</p>
+          <span class="fw-bold">Rs 700</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Tunics" data-price="700">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Tunics" data-price="700">Order</button>
+        </div>
+      </div>
+
+      <!-- Crop Top -->
+      <div class="col-6 col-lg-3 p-2 collection-item best">
+        <div class="collection-img">
+          <img src="images/c_undershirt.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Crop Top</p>
+          <span class="fw-bold">Rs 700</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Crop Top" data-price="700">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Crop Top" data-price="700">Order</button>
+            
+            
+
+        </div>
+      </div>
+
+      <!-- Western Shirt -->
+      <div class="col-6 col-lg-3 p-2 collection-item feat">
+        <div class="collection-img">
+          <img src="images/c_western-shirt.png" class="w-100">
+        </div>
+        <div class="text-center">
+          <p class="my-1">Western Shirt</p>
+          <span class="fw-bold">Rs 800</span><br>
+          <button class="btn btn-sm btn-dark mt-2 add-to-cart"
+            data-name="Western Shirt" data-price="800">Add to Cart</button>
+            <button class="btn btn-sm btn-success mt-2 order-item"
+            data-name="Western Shirt" data-price="800">Order</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+     
     <!-- end of collection -->
 
     <!-- special products -->
@@ -708,14 +624,17 @@ At Nan Hub, fashion is not just about clothing — it’s about empowering women
     <!-- end of footer -->
 
     <!-- jQuery -->
-    <script src="js/jquery-3.6.0.js"></script>
+<script src="js/jquery-3.6.0.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Isotope -->
+<script src="js/isotope.pkgd.min.js"></script>
 
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
-    <i class="fa-solid fa-magnifying-glass"></i>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/script.js"></script>
+    
 </body>
 </html>
 </body>
