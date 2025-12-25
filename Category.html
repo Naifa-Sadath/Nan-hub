@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAN Hub | Collection</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    /* Fix product image sizing */
+    .card-img-top {
+      object-fit: cover;
+      width: 100%;
+      height: 250px;
+    }
+
+    /* Ensure all card bodies same height */
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      min-height: 2.5rem;
+    }
+
+    .card .btn {
+      font-size: 0.9rem;
+    }
+
+    /* Wishlist heart hover effect */
+    .add-to-wishlist:hover {
+      transform: scale(1.2);
+      transition: 0.2s;
+    }
+
+    /* Mobile buttons smaller */
+    @media (max-width: 576px) {
+      .card .btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="fas fa-crown me-2"></i> NAN <span class="text-danger">Hub</span>
+    </a>
+
+    <div class="d-flex align-items-center gap-3 d-lg-none">
+      <!-- Search -->
+      <div class="dropdown">
+        <button class="btn p-0" data-bs-toggle="dropdown">
+          <i class="fas fa-search fs-5"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end p-3">
+          <input type="text" id="searchInput" class="form-control mb-2" placeholder="Search">
+          <li><a class="dropdown-item search-option" data-target="crochet">Crochet</a></li>
+          <li><a class="dropdown-item search-option" data-target="tunics">Tunics</a></li>
+          <li><a class="dropdown-item search-option" data-target="croptop">Crop Top</a></li>
+          <li><a class="dropdown-item search-option" data-target="skirt">Skirt</a></li>
+          <li><a class="dropdown-item search-option" data-target="pants">Pants</a></li>
+          <li><a class="dropdown-item search-option" data-target="jackets">Jackets</a></li>
+          <li><a class="dropdown-item search-option" data-target="kurthi set">Kurthi set</a></li>
+        </ul>
+      </div>
+
+      <!-- Wishlist -->
+      <a href="wishlist.html" class="btn position-relative p-0">
+        <i class="fa fa-heart fs-5 text-danger"></i>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle wishlist-count">0</span>
+      </a>
+
+      <!-- Cart -->
+      <a href="cart.html" class="btn position-relative p-0">
+        <i class="fa fa-shopping-cart fs-5"></i>
+        <span class="badge bg-primary position-absolute top-0 start-100 translate-middle cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="index.html#header">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#collection">Collection</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#special">Specials</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#blogs">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+      </ul>
+
+      <div class="d-none d-lg-flex align-items-center gap-3">
+        <!-- Search -->
+        <div class="dropdown">
+          <button class="btn" data-bs-toggle="dropdown">
+            <i class="fas fa-search"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end p-3">
+            <input type="text" id="searchInputDesktop" class="form-control mb-2" placeholder="Search">
+            <li><a class="dropdown-item search-option" data-target="crochet">Crochet</a></li>
+            <li><a class="dropdown-item search-option" data-target="tunics">Tunics</a></li>
+            <li><a class="dropdown-item search-option" data-target="croptop">Crop Top</a></li>
+            <li><a class="dropdown-item search-option" data-target="skirt">Skirt</a></li>
+            <li><a class="dropdown-item search-option" data-target="pants">Pants</a></li>
+            <li><a class="dropdown-item search-option" data-target="jackets">Jackets</a></li>
+            <li><a class="dropdown-item search-option" data-target="kurthi set">Kurthi set</a></li>
+          </ul>
+        </div>
+
+        <!-- Wishlist -->
+        <a href="wishlist.html" class="btn position-relative">
+          <i class="fa fa-heart text-danger"></i>
+          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle wishlist-count">0</span>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="btn position-relative">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="badge bg-primary position-absolute top-0 start-100 translate-middle cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="py-5 text-center bg-light">
+  <div class="container">
+    <h1 id="categoryTitle" class="fw-bold">Collection</h1>
+    <p class="lead">Explore our amazing products.</p>
+  </div>
+</header>
+
+<!-- Products Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-3" id="productList"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark py-5 text-white text-center">
+  <p>©️ 2025 NAN Hub. All rights reserved.</p>
+</footer>
+
+<!-- Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="notificationToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage">Product added!</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/jquery-3.6.0.js"></script>
+<script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const products = [
+  { name: "Crochet Top", price: 900, category: "crochet", image: "images/crochet.png" },
+  { name: "Tunics", price: 1200, category: "tunics", image: "images/tunics.png" },
+  { name: "Denim Jacket", price: 1500, category: "jackets", image: "images/jackets.png" },
+  { name: "Crop Top", price: 700, category: "croptop", image: "images/c_undershirt.png" },
+  { name: "Western Shirt", price: 800, category: "croptop", image: "images/c_western-shirt.png" },
+  { name: "Pleated Skirt", price: 300, category: "skirt", image: "images/skirt.png" },
+  { name: "Pink Pants", price: 500, category: "pants", image: "images/pink pants.png" },
+  { name: "Blue Jeans", price: 1200, category: "pants", image: "images/jeans.png" },
+  { name: "Crop Top With Bottom", price: 1000, category: "tunics", image: "images/special_product_1.jpg" },
+  { name: "Meroon Kurthi Set", price: 800, category: "kurthi set", image: "images/special_product_2.jpg" },
+  { name: "Jackets With Modestbottom Combo", price: 2000, category: "jackets", image: "images/special_product_3.jpg" },
+  { name: "Kurthi With Palaza", price: 1500, category:"kurthi set", image:"images/special_product_4.jpg" }
+];
+
+const productList = document.getElementById('productList');
+const urlParams = new URLSearchParams(window.location.search);
+const currentCategory = urlParams.get('cat') || 'all';
+
+document.getElementById('categoryTitle').textContent = 
+  currentCategory === 'all' ? "Collection" : currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1) + " Collection";
+
+function renderProducts() {
+  productList.innerHTML = '';
+  const filtered = currentCategory === 'all' ? products : products.filter(p => p.category === currentCategory);
+  filtered.forEach(product => {
+    const col = document.createElement('div');
+    col.className = "col-6 col-lg-3 p-2";
+    col.innerHTML = `
+      <div class="card position-relative h-100">
+        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+        <i class="fa fa-heart position-absolute top-0 end-0 m-2 add-to-wishlist" 
+           style="cursor:pointer; font-size:1.5rem;" 
+           data-name="${product.name}" data-price="${product.price}" data-image="${product.image}" 
+           title="Add to Wishlist"></i>
+        <div class="card-body text-center d-flex flex-column justify-content-between">
+          <h5 class="card-title">${product.name}</h5>
+          <p class="fw-bold">Rs ${product.price}</p>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-dark btn-sm add-to-cart" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">Add to Cart</button>
+            <button class="btn btn-success btn-sm order-now" data-name="${product.name}" data-price="${product.price}">Order Now</button>
+          </div>
+        </div>
+      </div>
+    `;
+    productList.appendChild(col);
+  });
+  attachProductListeners();
+}
+
+function attachProductListeners() {
+  // Wishlist toggle (white <-> red)
+  document.querySelectorAll('.add-to-wishlist').forEach(icon => {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const name = icon.dataset.name;
+    if (wishlist.some(item => item.name === name)) {
+      icon.classList.add('text-danger');
+    } else {
+      icon.classList.add('text-white');
+    }
+
+    icon.onclick = () => {
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      if (!wishlist.some(item => item.name === name)) {
+        wishlist.push({ name, price: parseFloat(icon.dataset.price), image: icon.dataset.image });
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        icon.classList.remove('text-white');
+        icon.classList.add('text-danger');
+        showToast(`${name} added to Wishlist!`);
+      } else {
+        wishlist = wishlist.filter(item => item.name !== name);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        icon.classList.remove('text-danger');
+        icon.classList.add('text-white');
+        showToast(`${name} removed from Wishlist!`);
+      }
+      updateWishlistBadge();
+    };
+  });
+
+  // Add to Cart
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.onclick = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: btn.dataset.name, price: parseFloat(btn.dataset.price), image: btn.dataset.image });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartBadge();
+      showToast(`${btn.dataset.name} added to Cart!`);
+    };
+  });
+
+  // Order Now via WhatsApp
+  document.querySelectorAll('.order-now').forEach(btn => {
+    btn.onclick = () => {
+      const phoneNumber = "97431139653";
+      const message = `Hello Nan Hub,%0A%0AProduct: *${btn.dataset.name}*%0APrice: Rs ${btn.dataset.price}`;
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    };
+  });
+}
+
+function updateWishlistBadge() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  document.querySelectorAll('.wishlist-count').forEach(span => span.textContent = wishlist.length);
+}
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.querySelectorAll('.cart-count').forEach(span => span.textContent = cart.length);
+}
+
+function showToast(message) {
+  document.getElementById('toastMessage').textContent = message;
+  const toastEl = document.getElementById('notificationToast');
+  const toast = new bootstrap.Toast(toastEl);
+  toast.show();
+}
+
+renderProducts();
+
+// Search functionality
+$('#searchInput, #searchInputDesktop').on('keypress', function(e){
+  if(e.which === 13){
+    const query = $(this).val().toLowerCase().trim();
+    let category = '';
+    if(query.includes('dress') || query.includes('crochet')) category='crochet';
+    else if(query.includes('tunics')) category='tunics';
+    else if(query.includes('croptop')) category='croptop';
+    else if(query.includes('skirt')) category='skirt';
+    else if(query.includes('pants')) category='pants';
+    else if(query.includes('jacket')) category='jackets';
+    else if(query.includes('kurthi')) category='kurthi set';
+    else { showToast('No matching products found'); return; }
+    window.location.href = `category.html?cat=${category}`;
+  }
+});
+
+$('.search-option').on('click', function(){
+  const targetCategory = $(this).data('target');
+  window.location.href = `category.html?cat=${targetCategory}`;
+});
+</script>
+
+</body>
+</html>

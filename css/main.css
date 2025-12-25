@@ -4,7 +4,7 @@
     :root{
     --lg-font: 'Kaisei Tokumin', serif;
     --sm-font: 'Poppins', sans-serif;
-    --primary-color:orange; /* Maroon */
+    --primary-color:brown; /* Maroon */
     --secondary-color:white; /* Beige */
     --text-dark: #333333; /* For readability */
     --text-light: #ffffff;
@@ -27,8 +27,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .btn:not(.nav-btns button){
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: unset;
+    color: var(--primary-color);
     padding: 10px 28px;
     border-radius: 25px;
     border: 1px solid var(--primary-color);
@@ -103,6 +103,7 @@ h1, h2, h3, h4, h5, h6{
 .nav-btns i{
     font-size: 18px;
     color: black;
+    cursor: pointer;
 }
 
 .nav-btns i:hover{
@@ -127,7 +128,7 @@ h1, h2, h3, h4, h5, h6{
 }
 @media (max-width: 768px) {
     #header {
-        height: 70vh; /* reduce height */
+        height: 80vh; /* reduce height */
     }
 
     .carousel-item {
@@ -175,14 +176,16 @@ h1, h2, h3, h4, h5, h6{
 
 /* collection */
 .active-filter-btn{
-    background-color: var(--primary-color)!important;
-    color: #fff!important;
+    background-color: white!important;
+    color: var(--primary-color)!important;
     border-color: var(--primary-color)!important;
+    
 
 }
 .filter-button-group .btn:hover{
     color:var(--primary-color)!important;
     background-color:white;
+    
 }
 .collection-img span{
     top: 20px;
@@ -192,7 +195,7 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 50%;
 }
 .filter-button-group .btn {
-    color: #fff; /* white text */
+    color: white; /* white text */
     background-color: #800000;/* maroon background */
     border: 1px solid var(--primary-color);
     padding: 8px 20px;
@@ -260,29 +263,7 @@ h1, h2, h3, h4, h5, h6{
     background-color: rgba(179, 179, 179, 0.05);
 }
 
-/* newsletter */
-#newsletter{
-    background-color: rgba(179, 179, 179, 0.05);
-}
-#newsletter p{
-    max-width: 600px;
-}
-#newsletter .input-group{
-    max-width: 500px;
-}
-#newsletter .form-control{
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-}
-#newsletter .btn{
-    background-color: var(--pink);
-    color: #fff;
-    border-color: var(--pink);
-}
-#newsletter .btn:hover{
-    background-color: #000;
-    border-color: #000;
-}
+
 
 /* footer */
 footer .brand{
@@ -324,4 +305,180 @@ footer a:hover{
 }
 #popular{
     display: none;
+}
+/* ===============================
+   NAVBAR MOBILE FIX
+================================ */
+
+/* Reduce navbar height on mobile */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 10px 0 !important;
+  }
+
+  /* Center menu items */
+  .navbar-nav {
+    margin-top: 15px;
+  }
+
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  /* Move search & cart BELOW menu */
+  .navbar-collapse .d-flex {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Bigger icons for touch */
+  .nav-btns i,
+  .navbar i {
+    font-size: 20px;
+  }
+}
+
+/* Desktop fine tuning */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+}
+/* ===============================
+   FIX FIXED-TOP MOBILE NAVBAR
+================================ */
+
+@media (max-width: 991px) {
+
+  /* Navbar container */
+  .navbar {
+    padding: 10px 0 !important;
+    background: white;
+    z-index: 1050;
+  }
+
+  /* CRITICAL FIX */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;              /* place below navbar */
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 1040;
+  }
+
+  /* Menu styling */
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  /* Icons section */
+  .nav-btns,
+  .navbar-collapse .d-flex {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .navbar i {
+    font-size: 20px;
+  }
+}
+body {
+  padding-top: 90px;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: white;
+    padding: 20px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}
+body {
+  padding-top: 90px;
+}
+
+.dropdown-menu input {
+  width: 100%;
+}
+/* Make Add to Cart and Order Now buttons smaller on mobile screens */
+@media (max-width: 576px) {
+  .btn.add-to-cart,
+  .btn.order-now,
+  .btn.btn-header {
+    font-size: 0.7rem;   /* smaller text */
+    padding: 0.25rem 0.4rem;  /* smaller padding */
+  }
+
+  /* Optional: stack buttons vertically if they are side by side */
+  .card-body .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+}
+/* Navbar icon buttons - remove border, background, and rounding */
+.navbar .btn {
+    border: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important; /* Optional: remove extra space */
+}
+
+/* Optional: slightly enlarge icons for mobile */
+.navbar .btn i {
+    font-size: 1.25rem;
+}
+/* Navbar icon buttons - remove border, background, rounding */
+.navbar .btn {
+    border: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important; /* hugs the icon */
+}
+
+/* Icon colors */
+.navbar .btn i.fa-search,
+.navbar .btn i.fa-shopping-cart {
+    color: black; /* black icons */
+}
+
+/* Wishlist heart - white by default, red when added to wishlist */
+.navbar .btn i.fa-heart {
+    color: white; /* default */
+}
+
+.navbar .btn i.fa-heart.text-danger {
+    color: red; /* active/wishlist */
 }

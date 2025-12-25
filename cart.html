@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nan Hub | Cart</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+
+<body>
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="fas fa-crown me-2"></i> NAN <span class="text-danger">Hub</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item"><a class="nav-link" href="index.html#header">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#collection">Collection</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#special">Specials</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#blogs">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+            </ul>
+
+            <div class="d-none d-lg-flex align-items-center gap-3">
+                <a href="wishlist.html" class="btn position-relative">
+                    <i class="fa fa-heart text-danger"></i>
+                    <span id="wishlistCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+                </a>
+
+                <a href="cart.html" class="btn position-relative">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge bg-primary position-absolute top-0 start-100 translate-middle">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Your Cart</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody id="cartItems"></tbody>
+  </table>
+
+  <h4 class="text-end">Total: Rs <span id="totalPrice">0</span></h4>
+
+  <!-- Buttons -->
+  <div class="text-end mt-3">
+    <button type="button" id="orderAll" class="btn btn-success me-2">Order All</button>
+    <button type="button" id="clearCart" class="btn btn-danger">Clear Cart</button>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body"></div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery-3.6.0.js"></script>
+
+<!-- Bootstrap -->
+<script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Isotope (for collection page) -->
+<script src="js/isotope.pkgd.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

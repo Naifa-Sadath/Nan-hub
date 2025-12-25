@@ -19,75 +19,105 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/main.css">
 </head>
     <!-- navbar -->
-    <nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
-        <div class = "container">
-            <a  class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
-                <i class="fas fa-crown me2 brand-icon"></i>
-                <span class="logo-nan">NAN</span>
-                <span class="logo-hub">Hub</span>
-                
-            </a>
-<div class="order-lg-2 nav-btns">
-    <div class="dropdown">
-        <button class="btn" type="button" data-bs-toggle="dropdown">
-            
-            <i class="fa-solid fa-magnifying-glass"></i>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3">
+  <div class="container">
 
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="fas fa-crown me-2"></i> NAN <span class="text-danger">Hub</span>
+    </a>
 
-        </button>
+    <!-- MOBILE ICONS -->
+    <div class="d-flex align-items-center gap-3 d-lg-none">
+<div class="dropdown">
+    <button class="btn p-0" data-bs-toggle="dropdown">
+      <i class="fas fa-search fs-5"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end p-3">
+      <input type="text" class="form-control mb-2" placeholder="Search">
+      <li><a class="dropdown-item" href="Category.html">Crochet</a></li>
+      <li><a class="dropdown-item" href="Category.html">Tunics</a></li>
+      <li><a class="dropdown-item" href="Category.html">Crop Top</a></li>
+      <li><a class="dropdown-item" href="Category.html">Skirt</a></li>
+      <li><a class="dropdown-item" href="Category.html">Pants</a></li>
+      <li><a class="dropdown-item" href="Category.html">Jackets</a></li>
+      <li><a class="dropdown-item" href="Category.html">Kurti set</a></li>
+    </ul>
+  </div>
+      
 
-        <ul class="dropdown-menu p-3" style="min-width:250px;">
-            <li>
-                <input type="text" id="searchInput" class="form-control mb-2" placeholder="Search...">
-            </li>
-            <li><a class="dropdown-item search-option" data-target="crochet.html">Crochet</a></li>
-            <li><a class="dropdown-item search-option" data-target="tunics.html">Tunics</a></li>
-            <li><a class="dropdown-item search-option" data-target="croptop.html">Croptop</a></li>
-        </ul>
+      <!-- Wishlist -->
+      <a href="wishlist.html" class="btn position-relative p-0">
+        <i class="fa fa-heart fs-5 text-danger"></i>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+      </a>
+
+      <!-- Cart -->
+      <a href="cart.html" class="btn position-relative p-0">
+        <i class="fa fa-shopping-cart fs-5"></i>
+        <span class="badge bg-primary position-absolute top-0 start-100 translate-middle">0</span>
+      </a>
     </div>
-    
 
-    <button type="button" class="btn position-relative">
-        <i class="fa fa-shopping-cart"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+    <!-- TOGGLER -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button type="button" class="btn position-relative">
-        <i class="fa fa-heart"></i>
-        <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
-    </button>
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navMenu">
 
-    
-</div>
-            
-            
+      <!-- Links -->
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="#header">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#collection">Collection</a></li>
+        <li class="nav-item"><a class="nav-link" href="#special">Specials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+      </ul>
 
-            <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
-                <ul class = "navbar-nav mx-auto text-center">
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#header">home</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#collection">collection</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#special">specials</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#blogs">blogs</a>
-                    </li>
-                    <li class = "nav-item px-2 py-2">
-                        <a class = "nav-link text-uppercase text-dark" href = "#about">about us</a>
-                    </li>
-                    
-                </ul>
-            </div>
+      <!-- DESKTOP ICONS -->
+      <div class="d-none d-lg-flex align-items-center gap-3">
+
+        <!-- Search -->
+        <div class="dropdown">
+          <button class="btn" data-bs-toggle="dropdown">
+            <i class="fas fa-search"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end p-3">
+            <input type="text" class="form-control mb-2" placeholder="Search">
+            <li><a class="dropdown-item" href="Category.html">Crochet</a></li>
+            <li><a class="dropdown-item" href="Category.html">Tunics</a></li>
+            <li><a class="dropdown-item" href="Category.html">Crop Top</a></li>
+            <li><a class="dropdown-item" href="Category.html">Skirt</a></li>
+            <li><a class="dropdown-item" href="Category.html">Pants</a></li>
+            <li><a class="dropdown-item" href="Category.html">Jackets</a></li>
+            <li><a class="dropdown-item" href="Category.html">Kurti set</a></li>
+          </ul>
         </div>
-    </nav>
+
+
+        <!-- Wishlist -->
+        <a href="wishlist.html" class="btn position-relative">
+          <i class="fa fa-heart text-danger"></i>
+          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="btn position-relative">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="badge bg-primary position-absolute top-0 start-100 translate-middle">0</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>
     <!-- end of navbar -->
 
-    <!-- header -->
-    <header id="header" class="carousel slide" data-bs-ride="carousel">
+    <!-- HEADER -->
+<header id="header" class="carousel slide" data-bs-ride="carousel">
+
   <div class="carousel-inner">
 
     <!-- Slide 1 -->
@@ -96,7 +126,10 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
           <h2 class="text-uppercase text-white">Best Collection</h2>
           <h1 class="text-uppercase fw-bold text-white">New Arrivals</h1>
-          <a href="#" class="btn btn-header mt-3">Shop Now</a>
+
+          <a href="category.html?cat=all" class="btn btn-header mt-3">
+            Shop Now
+          </a>
         </div>
       </div>
     </div>
@@ -107,23 +140,27 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
           <h2 class="text-uppercase text-white">Best Price & Offer</h2>
           <h1 class="text-uppercase fw-bold text-white">New Season</h1>
-          <a href="#" class="btn btn-header mt-3">Buy Now</a>
+
+          <a href="category.html?cat=all" class="btn btn-header mt-3">
+            Buy Now
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- Add more slides if needed -->
   </div>
 
   <!-- Controls -->
   <button class="carousel-control-prev" type="button" data-bs-target="#header" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
+
   <button class="carousel-control-next" type="button" data-bs-target="#header" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
+
 </header>
-    <!-- end of header -->
+<!-- END HEADER -->
 
     <!-- collection -->
      <section id="collection" class="py-5">
@@ -136,9 +173,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- FILTER BUTTONS -->
     <div class="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
       <button class="btn m-2 text-dark active-filter-btn" data-filter="*">All</button>
-      <button class="btn m-2 text-light" data-filter=".best">Best Sellers</button>
-      <button class="btn m-2 text-light" data-filter=".feat">Featured</button>
-      <button class="btn m-2 text-light" data-filter=".new">New Arrival</button>
+      <button class="btn m-2 text-light active-filter-btn" data-filter=".best">Best Sellers</button>
+      <button class="btn m-2 text-light active-filter-btn" data-filter=".feat">Featured</button>
+      <button class="btn m-2 text-light active-filter-btn" data-filter=".new">New Arrival</button>
     </div>
 
     <!-- PRODUCTS -->
@@ -146,199 +183,308 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
       <!-- Pleated Skirt -->
       <div class="col-6 col-lg-3 p-2 collection-item best">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/skirt.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Pleated Skirt"
+             data-price="300"
+             data-image="images/skirt.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Pleated Skirt</p>
           <span class="fw-bold">Rs 300</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Pleated Skirt" data-price="300">Add to Cart</button>
-          <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Pleated Skirt" data-price="300">Order</button>
+                  data-name="Pleated Skirt"
+                  data-price="300"
+                  data-image="images/skirt.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Pleated Skirt"
+                  data-price="300">Order</button>
         </div>
       </div>
 
       <!-- Blue Jeans -->
       <div class="col-6 col-lg-3 p-2 collection-item feat">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/jeans.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Blue Jeans"
+             data-price="1200"
+             data-image="images/jeans.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Blue Jeans</p>
           <span class="fw-bold">Rs 1200</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Blue Jeans" data-price="1200">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Blue jeans" data-price="1200">Order</button>
+                  data-name="Blue Jeans"
+                  data-price="1200"
+                  data-image="images/jeans.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Blue Jeans"
+                  data-price="1200">Order</button>
         </div>
       </div>
 
       <!-- Denim Jacket -->
       <div class="col-6 col-lg-3 p-2 collection-item new">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/jackets.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Denim Jacket"
+             data-price="1500"
+             data-image="images/jackets.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Denim Jacket</p>
           <span class="fw-bold">Rs 1500</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Denim Jacket" data-price="1500">Add to Cart</button>
-             <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Denim jacket" data-price="1500">Order</button>
+                  data-name="Denim Jacket"
+                  data-price="1500"
+                  data-image="images/jackets.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Denim Jacket"
+                  data-price="1500">Order</button>
         </div>
       </div>
 
       <!-- Pink Pants -->
       <div class="col-6 col-lg-3 p-2 collection-item best">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/pink pants.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Pink Pants"
+             data-price="500"
+             data-image="images/pink pants.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Pink Pants</p>
           <span class="fw-bold">Rs 500</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Pink Pants" data-price="500">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="pink pants" data-price="500">Order</button>
+                  data-name="Pink Pants"
+                  data-price="500"
+                  data-image="images/pink pants.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Pink Pants"
+                  data-price="500">Order</button>
         </div>
       </div>
 
-      <!-- Crochet -->
+      <!-- Crochet Top -->
       <div class="col-6 col-lg-3 p-2 collection-item feat">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/crochet.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Crochet Top"
+             data-price="900"
+             data-image="images/crochet.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
-          <p class="my-1">Crochet</p>
+          <p class="my-1">Crochet Top</p>
           <span class="fw-bold">Rs 900</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Crochet" data-price="900">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Crochet" data-price="900">Order</button>
+                  data-name="Crochet Top"
+                  data-price="900"
+                  data-image="images/crochet.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Crochet Top"
+                  data-price="900">Order</button>
         </div>
       </div>
 
       <!-- Tunics -->
       <div class="col-6 col-lg-3 p-2 collection-item new">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/tunics.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Tunics"
+             data-price="700"
+             data-image="images/tunics.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Tunics</p>
           <span class="fw-bold">Rs 700</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Tunics" data-price="700">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Tunics" data-price="700">Order</button>
+                  data-name="Tunics"
+                  data-price="700"
+                  data-image="images/tunics.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Tunics"
+                  data-price="700">Order</button>
         </div>
       </div>
 
       <!-- Crop Top -->
       <div class="col-6 col-lg-3 p-2 collection-item best">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/c_undershirt.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Crop Top"
+             data-price="700"
+             data-image="images/c_undershirt.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Crop Top</p>
           <span class="fw-bold">Rs 700</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Crop Top" data-price="700">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Crop Top" data-price="700">Order</button>
-            
-            
-
+                  data-name="Crop Top"
+                  data-price="700"
+                  data-image="images/c_undershirt.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Crop Top"
+                  data-price="700">Order</button>
         </div>
       </div>
 
       <!-- Western Shirt -->
       <div class="col-6 col-lg-3 p-2 collection-item feat">
-        <div class="collection-img">
+        <div class="collection-img position-relative">
           <img src="images/c_western-shirt.png" class="w-100">
+          <i class="fa fa-heart text-white position-absolute top-0 end-0 m-2 add-to-wishlist"
+             style="cursor:pointer; font-size:1.5rem;"
+             data-name="Western Shirt"
+             data-price="800"
+             data-image="images/c_western-shirt.png"
+             title="Add to Wishlist"></i>
         </div>
         <div class="text-center">
           <p class="my-1">Western Shirt</p>
           <span class="fw-bold">Rs 800</span><br>
           <button class="btn btn-sm btn-dark mt-2 add-to-cart"
-            data-name="Western Shirt" data-price="800">Add to Cart</button>
-            <button class="btn btn-sm btn-success mt-2 order-item"
-            data-name="Western Shirt" data-price="800">Order</button>
+                  data-name="Western Shirt"
+                  data-price="800"
+                  data-image="images/c_western-shirt.png">Add to Cart</button>
+          <button class="btn btn-sm btn-success mt-2 order-now"
+                  data-name="Western Shirt"
+                  data-price="800">Order</button>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-     
     <!-- end of collection -->
 
     <!-- special products -->
-    <section id = "special" class = "py-5">
-        <div class = "container">
-            <div class = "title text-center py-5">
-                <h2 class = "position-relative d-inline-block">Special Selection</h2>
-            </div>
+    <!-- special products -->
+<section id="special" class="py-5">
+  <div class="container">
+    <div class="title text-center py-5">
+      <h2 class="position-relative d-inline-block">Special Selection</h2>
+    </div>
 
-            <div class = "special-list row g-0">
-                <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-                    <div class = "special-img position-relative overflow-hidden">
-                        <img src = "images/special_product_1.jpg" class = "w-100">
-                        <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart"></i>
-                        </span>
-                    </div>
-                    <div class = "text-center">
-                        <p class = "text-capitalize mt-3 mb-1">crop top with bottom</p>
-                        <span class = "fw-bold d-block">Rs 1000</span>
-                        <a href = "#" class = "btn btn-primary mt-3">Add to cart</a>
-                    </div>
-                </div>
+    <div class="special-list row g-0">
 
-                <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-                    <div class = "special-img position-relative overflow-hidden">
-                        <img src = "images/special_product_2.jpg" class = "w-100">
-                        <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart"></i>
-                        </span>
-                    </div>
-                    <div class = "text-center">
-                        <p class = "text-capitalize mt-3 mb-1">Meroon kutha set</p>
-                        <span class = "fw-bold d-block">Rs 800</span>
-                        <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-                    </div>
-                </div>
-
-                <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-                    <div class = "special-img position-relative overflow-hidden">
-                        <img src = "images/special_product_3.jpg" class = "w-100">
-                        <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart"></i>
-                        </span>
-                    </div>
-                    <div class = "text-center">
-                        <p class = "text-capitalize mt-3 mb-1">jackets with modestbottom combo</p>
-                        <span class = "fw-bold d-block">Rs 2000</span>
-                        <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-                    </div>
-                </div>
-
-                <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
-                    <div class = "special-img position-relative overflow-hidden">
-                        <img src = "images/special_product_4.jpg" class = "w-100">
-                        <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
-                            <i class = "fas fa-heart"></i>
-                        </span>
-                    </div>
-                    <div class = "text-center">
-                        <p class = "text-capitalize mt-3 mb-1">kuthi with palaza</p>
-                        <span class = "fw-bold d-block">Rs 1500</span>
-                        <a href = "#" class = "btn btn-primary mt-3">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
+      <!-- Product 1 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+        <div class="special-img position-relative overflow-hidden">
+          <img src="images/special_product_1.jpg" class="w-100">
+          <!-- Wishlist Icon -->
+          <button class="wishlist-icon btn position-absolute top-0 end-0 m-2 p-2 text-white bg-white border rounded-circle" 
+                  data-name="Crop Top with Bottom" 
+                  data-price="1000" 
+                  data-image="images/special_product_1.jpg">
+            <i class="fa fa-heart"></i>
+          </button>
         </div>
-    </section>
+        <div class="text-center mt-2">
+          <p class="text-capitalize mt-3 mb-1">Crop Top with Bottom</p>
+          <span class="fw-bold d-block">Rs 1000</span>
+          <button class="btn btn-primary mt-3 add-to-cart" 
+                  data-name="Crop Top with Bottom" 
+                  data-price="1000" 
+                  data-image="images/special_product_1.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+        <div class="special-img position-relative overflow-hidden">
+          <img src="images/special_product_2.jpg" class="w-100">
+          <button class="wishlist-icon btn position-absolute top-0 end-0 m-2 p-2 text-white bg-white border rounded-circle" 
+                  data-name="Meroon Kutha Set" 
+                  data-price="800" 
+                  data-image="images/special_product_2.jpg">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+        <div class="text-center mt-2">
+          <p class="text-capitalize mt-3 mb-1">Meroon Kurthi Set</p>
+          <span class="fw-bold d-block">Rs 800</span>
+          <button class="btn btn-primary mt-3 add-to-cart" 
+                  data-name="Meroon Kutha Set" 
+                  data-price="800" 
+                  data-image="images/special_product_2.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+        <div class="special-img position-relative overflow-hidden">
+          <img src="images/special_product_3.jpg" class="w-100">
+          <button class="wishlist-icon btn position-absolute top-0 end-0 m-2 p-2 text-white bg-white border rounded-circle" 
+                  data-name="Jackets with Modestbottom Combo" 
+                  data-price="2000" 
+                  data-image="images/special_product_3.jpg">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+        <div class="text-center mt-2">
+          <p class="text-capitalize mt-3 mb-1">Jackets with Modestbottom Combo</p>
+          <span class="fw-bold d-block">Rs 2000</span>
+          <button class="btn btn-primary mt-3 add-to-cart" 
+                  data-name="Jackets with Modestbottom Combo" 
+                  data-price="2000" 
+                  data-image="images/special_product_3.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+        <div class="special-img position-relative overflow-hidden">
+          <img src="images/special_product_4.jpg" class="w-100">
+          <button class="wishlist-icon btn position-absolute top-0 end-0 m-2 p-2 text-white bg-white border rounded-circle" 
+                  data-name="Kuthi with Palaza" 
+                  data-price="1500" 
+                  data-image="images/special_product_4.jpg">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+        <div class="text-center mt-2">
+          <p class="text-capitalize mt-3 mb-1">Kurthi with Palaza</p>
+          <span class="fw-bold d-block">Rs 1500</span>
+          <button class="btn btn-primary mt-3 add-to-cart" 
+                  data-name="Kuthi with Palaza" 
+                  data-price="1500" 
+                  data-image="images/special_product_4.jpg">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end of special products -->
     <!-- end of special products -->
 
     <!-- blogs -->
@@ -435,93 +581,6 @@ At Nan Hub, fashion is not just about clothing — it’s about empowering women
     </section>
     <!-- end of about us -->
 
-    <!-- popular -->
-    <section id = "popular" class = "py-5">
-        <div class = "container">
-            <div class = "title text-center pt-3 pb-5">
-                <h2 class = "position-relative d-inline-block ms-4">Popular Of This Year</h2>
-            </div>
-
-            <div class = "row">
-                <div class = "col-md-6 col-lg-4 row g-3">
-                    <h3 class = "fs-5">Top Rated</h3>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/top_rated_1.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/top_rated_2.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/top_rated_3.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "col-md-6 col-lg-4 row g-3">
-                    <h3 class = "fs-5">Best Selling</h3>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/best_selling_1.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/best_selling_2.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/best_selling_3.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "col-md-6 col-lg-4 row g-3">
-                    <h3 class = "fs-5">On Sale</h3>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/on_sale_1.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/on_sale_2.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                    <div class = "d-flex align-items-start justify-content-start">
-                        <img src = "images/on_sale_3.jpg" alt = "" class = "img-fluid pe-3 w-25">
-                        <div>
-                            <p class = "mb-0">Blue Shirt</p>
-                            <span>$ 20.00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- end of popular -->
-
     
 
     <!-- footer -->
@@ -557,7 +616,7 @@ At Nan Hub, fashion is not just about clothing — it’s about empowering women
                         </li>
                         <li class = "my-3">
                             <a href = "#" class = "text-white text-decoration-none text-muted">
-                                <i class = "fas fa-chevron-right me-1"></i> About Us
+                                <i class = "fas fa-chevron-right me-1"></i> About 
                             </a>
                         </li>
                     </ul>
@@ -622,6 +681,17 @@ At Nan Hub, fashion is not just about clothing — it’s about empowering women
         </div>
     </footer>
     <!-- end of footer -->
+     <!-- Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="cartToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Product added to cart!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
 
     <!-- jQuery -->
 <script src="js/jquery-3.6.0.js"></script>

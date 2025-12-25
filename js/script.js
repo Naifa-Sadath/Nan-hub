@@ -1,115 +1,187 @@
-// init Isotope
-var $grid = $('.collection-list').isotope({
-  // options
-});
-// filter items on button click
-$('.filter-button-group').on( 'click', 'button', function() {
-  var filterValue = $(this).attr('data-filter');
-  resetFilterBtns();
-  $(this).addClass('active-filter-btn');
-  $grid.isotope({ filter: filterValue });
-});
-
-var filterBtns = $('.filter-button-group').find('button');
-function resetFilterBtns(){
-  filterBtns.each(function(){
-    $(this).removeClass('active-filter-btn');
-  });
-}
 $(document).ready(function () {
 
-    // When search option is clicked
-    $('.search-option').on('click', function () {
-        let targetPage = $(this).data('target');
-        window.location.href = targetPage;
-    });
+    // ==============================
+    // CART SETUP
+    // ==============================
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // When user presses Enter in search input
+    function updateCartCount() {
+        $('.fa-shopping-cart').siblings('.badge').text(cart.length);
+    }
+
+    updateCartCount();
+
+    // ======== TOAST NOTIFICATION ========
+    const toastEl = document.getElementById('cartToast');
+    const toast = new bootstrap.Toast(toastEl);
+
+    function showToast(message) {
+        toastEl.querySelector('.toast-body').textContent = message;
+        toast.show();
+    }
+
+    // ==============================
+    // COLLECTION PAGE - ISOTOPE FILTER
+    // ==============================
+    if ($('.collection-list').length) {
+        var $grid = $('.collection-list').isotope({
+            itemSelector: '.collection-item',
+            layoutMode: 'fitRows'
+        });
+
+        $('.filter-button-group').on('click', 'button', function () {
+            var filterValue = $(this).attr('data-filter');
+            $('.filter-button-group button').removeClass('active-filter-btn');
+            $(this).addClass('active-filter-btn');
+            $grid.isotope({ filter: filterValue });
+        });
+    }
+
+    // ==============================
+    // SEARCH FUNCTIONALITY
+    // ==============================
     $('#searchInput').on('keypress', function (e) {
         if (e.which === 13) { // Enter key
             let query = $(this).val().toLowerCase();
 
             if (query.includes('dress') || query.includes('crochet')) {
                 window.location.href = 'crochet.html';
-            } 
-            else if (query.includes('tunics')) {
+            } else if (query.includes('tunics')) {
                 window.location.href = 'tunics.html';
-            } 
-            else if (query.includes('croptop')) {
+            } else if (query.includes('croptop')) {
                 window.location.href = 'croptop.html';
-            } 
-            else {
+            } else {
                 alert('No matching products found');
             }
         }
     });
 
-});
-$(document).ready(function () {
+    $('.search-option').on('click', function () {
+        let targetPage = $(this).data('target');
+        window.location.href = targetPage;
+    });
 
-  /* ===============================
-     ISOTOPE FILTER (COLLECTION)
-  =============================== */
-  var $grid = $('.collection-list').isotope({
-    itemSelector: '.col-6',
-    layoutMode: 'fitRows'
-  });
+    // ==============================
+    // ADD TO CART & ORDER SINGLE ITEM
+    // ==============================
+    $(document).on('click', '.add-to-cart', function () {
+        let name = $(this).data('name');
+        let price = Number($(this).data('price'));
 
-  $('.filter-button-group').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    $('.filter-button-group button').removeClass('active-filter-btn');
-    $(this).addClass('active-filter-btn');
-    $grid.isotope({ filter: filterValue });
-  });
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showToast(`${name} added to cart!`);
+    });
 
-  /* ===============================
-     CART SYSTEM
-  =============================== */
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    $(document).on('click', '.order-now', function () {
+        let name = $(this).data('name');
+        let price = $(this).data('price');
 
-  function updateCartCount() {
-    let count = cart.length;
-    $('.fa-shopping-cart').siblings('.badge').text(count);
-  }
+        let message =
+            `Hello Nan Hub,%0A%0AProduct: *${name}*%0APrice: Rs ${price}`;
 
-  updateCartCount();
+        let phoneNumber = "97431139653";
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    });
+           // ==============================
+// WISHLIST SETUP
+// ==============================
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-  $('.add-to-cart').on('click', function () {
+function updateWishlistCount() {
+    $('.fa-heart').siblings('.badge').text(wishlist.length);
+}
+
+updateWishlistCount();
+
+// ADD TO WISHLIST
+$(document).on('click', '.add-to-wishlist', function () {
     let name = $(this).data('name');
-    let price = $(this).data('price');
+    let price = Number($(this).data('price'));
+    let image = $(this).data('image');
 
-    cart.push({ name, price });
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    updateCartCount();
-    alert(name + " added to cart");
-  });
-
-  /* ===============================
-     WHATSAPP ORDER (SINGLE PRODUCT)
-  =============================== */
-  $('.order-item').on('click', function () {
-    let name = $(this).data('name');
-    let price = $(this).data('price');
-
-    let phone = "+97431139653"; // Qatar number (NO + sign)
-    let message =
-      `Hello Nan Hub,%0A%0AI want to order:%0A` +
-      `Product: ${name}%0A` +
-      `Price: Rs ${price}`;
-
-    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-  });
-
+    // Prevent duplicates
+    if (!wishlist.find(item => item.name === name)) {
+        wishlist.push({ name, price, image });
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        updateWishlistCount();
+        alert(`${name} added to wishlist!`);
+    } else {
+        alert(`${name} is already in wishlist`);
+    }
 });
 
-  $('#searchInput').on('keyup', function (e) {
-    if (e.key === "Enter") {
-      let q = $(this).val().toLowerCase();
 
-      if (q.includes("skirt")) location.href = "#collection";
-      else if (q.includes("jeans")) location.href = "#collection";
-      else if (q.includes("crochet")) location.href = "crochet.html";
-      else alert("No product found");
+    // ==============================
+    // CART PAGE - RENDER CART
+    // ==============================
+    if ($('#cartItems').length) {
+        function renderCart() {
+            let total = 0;
+            $('#cartItems').empty();
+            cart.forEach((item, index) => {
+                total += parseFloat(item.price);
+                $('#cartItems').append(`
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>Rs ${item.price}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger remove-item" data-index="${index}">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `);
+            });
+            $('#totalPrice').text(total);
+        }
+
+        renderCart();
+
+        // REMOVE SINGLE ITEM
+        $(document).on('click', '.remove-item', function () {
+            const index = $(this).data('index');
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+            updateCartCount();
+            showToast("Item removed from cart");
+        });
+
+        // CLEAR CART
+        $(document).on('click', '#clearCart', function () {
+            if (cart.length === 0) {
+                alert("Cart is already empty");
+                return;
+            }
+            if (confirm("Are you sure you want to clear the cart?")) {
+                cart = [];
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+                updateCartCount();
+                showToast("Cart cleared!");
+            }
+        });
+       
+        // ORDER ALL ITEMS
+        $(document).on('click', '#orderAll', function () {
+            if (cart.length === 0) {
+                alert("Your cart is empty");
+                return;
+            }
+
+            let message = "Hello Nan Hub,%0A%0AI would like to order:%0A";
+            let total = 0;
+
+            cart.forEach((item, i) => {
+                message += `${i + 1}. ${item.name} - Rs ${item.price}%0A`;
+                total += item.price;
+            });
+
+            message += `%0A*Total: Rs ${total}*`;
+            let phoneNumber = "97431139653";
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        });
     }
 });
