@@ -27,11 +27,11 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .btn:not(.nav-btns button){
-    background-color: unset;
-    color: var(--primary-color);
+    background-color:gainsboro;
+    color: black;
     padding: 8px 16px;
     border-radius: 6px;
-    border: 1px solid var(--primary-color);
+    border: grey;
 }
 .btn:not(.nav-btns button):hover{
     background-color: var(--text-light);
@@ -634,4 +634,14 @@ header p {
   font-size: 20px;
   font-weight: 700;
   color: #b02a37;
+}
+/* FIX: Mobile header buttons not clickable */
+body {
+    padding-top: 80px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 0;
+    }
 }
